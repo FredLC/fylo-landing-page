@@ -8,8 +8,14 @@
   --light-gray: #bfbfbf;
 }
 
+/* General Styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
+  margin: 0;
 }
 
 h2,
@@ -22,8 +28,22 @@ h2 {
   margin-bottom: 20px;
 }
 
+@media (max-width: 576px) {
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
 h3 {
   font-size: 32px;
+}
+
+@media (max-width: 576px) {
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+  }
 }
 
 a {
@@ -34,6 +54,13 @@ p {
   line-height: 1.5;
 }
 
+@media (max-width: 576px) {
+  p {
+    font-size: 14px;
+  }
+}
+
+/* Header Desktop */
 header {
   display: flex;
   justify-content: space-between;
@@ -48,6 +75,22 @@ nav a {
   color: var(--text-color);
 }
 
+/* Header Mobile */
+@media (max-width: 576px) {
+  header {
+    padding: 20px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  #header-img {
+    width: 25%;
+  }
+}
+
+/* Features Section */
 #features {
   display: flex;
   margin-top: 85px;
@@ -68,7 +111,7 @@ form {
 .email-input {
   padding: 15px 10px;
   width: 50%;
-  max-width: 320px;
+  /* max-width: 320px; */
   border-color: rgba(7, 4, 59, 0.5);
   border-width: 0.63px;
   border-radius: 4px;
@@ -91,6 +134,44 @@ form {
   font-weight: 700;
 }
 
+#main-image {
+  flex-shrink: 1.5;
+}
+
+#main-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 576px) {
+  #features {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .cta {
+    padding-right: 0;
+    display: block;
+  }
+
+  .email-input {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    padding-left: 10px;
+  }
+
+  #submit {
+    margin-top: 16px;
+    width: 100%;
+  }
+}
+
+/* Team */
 #team {
   background: url("images/bg-curve-desktop.svg");
   background-size: cover;
@@ -176,6 +257,40 @@ form {
   height: auto;
 }
 
+@media (max-width: 576px) {
+  #team {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .left {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .left a {
+    margin: auto;
+    margin-top: 35px;
+  }
+
+  .feature-paragraph {
+    max-width: 100%;
+  }
+
+  .card {
+    width: 100%;
+    text-align: left;
+  }
+
+  .right {
+    flex-shrink: 0;
+    padding: 40px 20px;
+  }
+}
+
+/* Sign In */
 #signIn {
   background-color: #575988;
   color: white;
@@ -209,6 +324,27 @@ form {
   font-weight: 700;
 }
 
+@media (max-width: 576px) {
+  #signIn {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    padding-bottom: 70px;
+    text-align: center;
+  }
+
+  .bottom-form {
+    min-width: 100%;
+    margin-top: 24px;
+  }
+
+  .bottom-form button {
+    max-width: 100%;
+    margin-top: 8px;
+  }
+}
+
+/* Footer */
 #footer {
   background-color: #07043b;
   color: white;
@@ -230,7 +366,7 @@ form {
   align-items: flex-start;
 }
 
-.contact-column img {
+.logo-white {
   margin-bottom: 10px;
 }
 
@@ -238,12 +374,41 @@ form {
   margin-right: 15px;
 }
 
-.links-column-1 {
+.links-column-1,
+.links-column-2 {
   display: flex;
   flex-direction: column;
 }
 
-.links-column-2 {
-  display: flex;
-  flex-direction: column;
+@media (max-width: 576px) {
+  #footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #footer a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .links-column-1,
+  .links-column-2 {
+    margin-top: 20px;
+  }
+
+  .links-column-1 a,
+  .links-column-2 a {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  .social-links {
+    margin: auto;
+    margin-top: 35px;
+  }
 }
